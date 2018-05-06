@@ -35,7 +35,8 @@
 
   ui.start('#firebaseui-auth-container', {
   signInOptions: [
-    firebase.auth.GoogleAuthProvider.PROVIDER_ID
+    firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+    firebase.auth.FacebookAuthProvider.PROVIDER_ID
   ],
 });
 
@@ -56,13 +57,14 @@ var uiConfig = {
   },
   // Will use popup for IDP Providers sign-in flow instead of the default, redirect.
   signInFlow: 'popup',
-  signInSuccessUrl: '<url-to-redirect-to-on-success>',
+  signInSuccessUrl: 'http://maurice5.webcup.symars.re/',
   signInOptions: [
     // Leave the lines as is for the providers you want to offer your users.
     firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+    firebase.auth.FacebookAuthProvider.PROVIDER_ID
   ],
-  // Terms of service url.
-  tosUrl: '<your-tos-url>'
+  // Terms of service url.firebase.auth.FacebookAuthProvider.PROVIDER_ID
+  tosUrl: 'http://maurice5.webcup.symars.re/'
 };
 
 // The start method will wait until the DOM is loaded.
