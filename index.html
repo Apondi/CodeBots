@@ -1,245 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
+    <head>
 
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Mine Zone Login </title>
 
-    <title>Mine Zone</title>
+        <!-- CSS -->
+        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
+        <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css">
+		    <link rel="stylesheet" href="assets/css/login-form.css">
+        <link rel="stylesheet" href="assets/css/login-style.css">
+        <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/2.5.1/firebaseui.css" />
 
-    <!-- Custom styles for this template -->
-    <link href="assets/css/simple-sidebar.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="assets/css/main.css">
-      <link rel="stylesheet" type="text/css" href="assets/css/preloader.css">
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
 
-</head>
+        <!-- Favicon and touch icons
+        <link rel="shortcut icon" href="assets/ico/favicon.png">
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
+        -->
 
-<body>
+    <script src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script>
+    <script src="https://cdn.firebase.com/libs/firebaseui/2.5.1/firebaseui.js"></script>
 
-    <div id="wrapper">
 
-        <!-- Sidebar -->
-        <div id="sidebar-wrapper">
-          <form method="post">
-            <ul class="sidebar-nav">
 
-<!--                 <li class="sidebar-brand"><h3>Products Wanted</h3></li> -->
-                <p>This is a list of the products we would like to trade and their priority values. Select what you can offer to earn shopping points and shop</p>
-                <li class="products_wanted_group" >Agriculture</h4></li>
+    </head>
 
-                  <li class="product-item"><input type="checkbox" name="livestock" value="10"> Livestock & Fisheries<br> </li>
-                  <li class="product-item"><input type="checkbox" name="crops" value="15"> Vegetables and Crops<br> </li>
-                <li class="products_wanted_group" ><h4>Builders</h4></li>
-                <li class="product-item"><input type="checkbox" name="" value="25"> Repair Tools <br> </li>
-                <li class="product-item"><input type="checkbox" name="" value="15"> Construction Materials  <br></li>
-                <li class="products_wanted_group" ><h4>Healers</h4></li>
-                <li class="product-item"><input type="checkbox" name="firstaid" value="20"> First Aid Toolkits <br> </li>
-                <li class="product-item"><input type="checkbox" name="antidote" value="20"> Zombie Antidote <br> </li>
-                <li class="products_wanted_group"><h4>Hunters</h4></li>
-                <li class="product-item"><input type="checkbox" name="" value="15"> Meat <br> </li>
-                <li class="product-item"><input type="checkbox" name="" value="10"> Animal Skin  <br></li>
-                <li class="products_wanted_group" ><h4>Fisherman</h4> </li>
-                <li class="product-item"><input type="checkbox" name="" value="30"> Pearls <br> </li>
-                <li class="product-item"><input type="checkbox" name="" value="35"> Fish <br> </li>
-            </ul>
-          </form>
-        </div>
-        <!-- /#sidebar-wrapper -->
+    <body>
 
-        <!-- Page Content -->
-        <div id="page-content-wrapper">
-            <!-- Top navigation -->
-            <nav class="navbar navbar-default navbar-fixed-top">
-                <div class="container-fluid">
-                    <div class="navbar-header">
-                        <a class="navbar-brand" href="#">
-                        <img alt="Mine Zone" src="assets/img/logo.jpg" id="logo">
-                        </a>
-                        <ul class="nav navbar-nav">
-                            <li><a href="#menu-toggle" id="menu-toggle">Products we want</a></li>
-                        </ul>
+        <!-- Top content -->
+        <div class="top-content">
+
+            <div class="inner-bg">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-8 col-sm-offset-2 text">
+                            <h1><strong>Minezone</strong> Login</h1>
+
+                        </div>
                     </div>
-                        <ul class="nav navbar-nav" id="navbar-right">
-                            <li><a href="#" id="points"><i class="fa fa-shopping-cart"></i> Points <span class="badge">3</span></a></li>
-                            <li><a href="#" id="cart"><span class="glyphicon glyphicon-shopping-cart"></span></a></li>
-                        </ul>
-                  </div>
-            </nav>
+                    <div class="row">
+                        <div class="col-sm-6 col-sm-offset-3 form-box">
+                        	<div class="form-top">
+                        		<div class="form-top-left">
+                        			<h3>Login to Minezone</h3>
 
-            <div class="rp">
-                <div style="position: absolute; top: 100px; left: 100px; right: 400px;">
-                    <h2 class="display-3">Welcome to the Miners Platform</h2>
-                    <p class="header-text">You need to earn points before conducting any trades with our zone. Click on the "Products we want" button above and select the various products you can offer us in order to earn points. The earned points act as credit to shop our products.</p>
-                </div>
+                        		</div>
+                        		<div class="form-top-right">
+                        			<i class="fa fa-lock"></i>
+                        		</div>
+                            </div>
+                            <div class="form-bottom">
+			                    <form role="form" method="post" class="login-form">
+			                    	<div class="form-group">
+                              <div id="firebaseui-auth-container"></div>
+                              <div id="loader">Loading...</div>
+                        </div>
+			                    </form>
+		                    </div>
+                        </div>
+                    </div>
+                  
             </div>
 
-            <!-- Jumbotron -->
-            <!-- <div class="jumbotron jumbotron-fluid">
-              <div class="container">
-                <h2 class="display-3">Fluid jumbotron</h2>
-                <p class="header-text">This is a modified jumbotron that occupies the entire horizontal space of its parent.
-                This is a modified jumbotron that occupies the entire horizontal space of its parent.
-            This is a modified jumbotron that occupies the entire horizontal space of its parent.This is a modified jumbotron that occupies the entire horizontal space of its parent.This is a modified jumbotron that occupies the entire horizontal space of its parent.This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
-              </div>
-            </div> -->
-
-
-            <div class="container-fluid" id="page-content-body">
-                <hr />
-                <!-- Advertisement -->
-                <div class="row md-4">
-                    <div class="col-md-8">
-                      <p>WE ARE HIRING. Please apply to work with us for a chance to earn amazing discounts and points to shop our products and services whenever.</p>
-                    </div>
-                    <div class="col-md-4">
-                      <a class="btn btn-lg btn-primary btn-block" href="contact.html">Apply Now</a>
-                    </div>
-                </div>
-                <hr />
-
-                <!-- Hot Product -->
-                <div id="mainbox">
-                    <div class="card">
-                        <img class="card-img-top" src="assets/img/1.jpg" alt="Card image cap">
-                      <div class="card-body">
-
-                        <p class="card-text"> Get precious stones for with 20 credits</p>
-                        <button type="button" class="btn btn-primary" value="20" ><span class="glyphicon glyphicon-shopping-cart"></span> Add to cart</button>
-
-                      </div>
-                    </div>
-                    <div class="card">
-                        <img class="card-img-top" src="assets/img/2.jpg" alt="Card image cap">
-                      <div class="card-body">
-
-                        <p class="card-text">Get refined metals with 15 credits </p>
-                        <button type="button" class="btn btn-primary" value="15" ><span class="glyphicon glyphicon-shopping-cart"></span> Add to cart</button>
-
-                      </div>
-                    </div>
-                    <div class="card">
-                        <img class="card-img-top" src="assets/img/3.jpg" alt="Card image cap">
-                      <div class="card-body">
-
-                        <p class="card-text">Get quarry with 10 credits</p>
-                        <button type="button" class="btn btn-primary" value="10" ><span class="glyphicon glyphicon-shopping-cart"></span> Add to cart</button>
-
-                      </div>
-                    </div>
-                    <div class="card">
-                        <img class="card-img-top" src="assets/img/4.jpg" alt="Card image cap">
-                      <div class="card-body">
-
-                        <p class="card-text">Get precious metals with 30 credits</p>
-                        <button type="button" class="btn btn-primary" value="30"><span class="glyphicon glyphicon-shopping-cart"></span> Add to cart</button>
-                      </div>
-                    </div>
-                    <div class="card">
-                        <img class="card-img-top" src="assets/img/5.jpg" alt="Card image cap">
-                      <div class="card-body">
-
-                        <p class="card-text">Get oil with 35 credits</p>
-                        <button type="button" class="btn btn-primary" value="35"><span class="glyphicon glyphicon-shopping-cart"></span> Add to cart</button>
-
-                      </div>
-                    </div>
-                    <div class="card">
-                        <img class="card-img-top" src="assets/img/6.jpg" alt="Card image cap">
-                      <div class="card-body">
-
-                        <p class="card-text">Get gas with 25 credits</p>
-                        <button type="button" class="btn btn-primary" value="25"><span class="glyphicon glyphicon-shopping-cart"></span> Add to cart</button>
-
-                      </div>
-                    </div>
-
-                </div>
         </div>
 
-    </div>
-    <!-- /#wrapper -->
 
-        <!-- Footer -->
-    <footer class="py-5 bg-dark">
-      <div class="container">
-        <p class="m-0 text-center text-white">Copyright &copy; Team Code Bots 2018</p>
-      </div>
-      <!-- /.container -->
-    </footer>
+        <!-- Javascript -->
 
-    <!-- Bootstrap core JavaScript -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-      <script src="assets/js/cart.js"></script>
-    <!-- Menu Toggle Script -->
-    <script>
+        <script src="vendor/jquery/jquery.min.js"></script>
+        <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+        <script src="vendor/jquery/jquery.backstretch.js"></script>
+        <script src="assets/js/login-scripts.js"></script>
+        <script src="assets/js/loginapp.js" defer></script>
 
-    $("#menu-toggle").click(function(e) {
-        e.preventDefault();
-        $("#wrapper").toggleClass("toggled");
-    });
-    </script>
+        <!--[if lt IE 10]>
+            <script src="assets/js/login-placeholder.js"></script>
+        <![endif]-->
 
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-    <script src="assets/js/jquery.ripples.js"></script>
-
-<script type="text/javascript">
-    $('.rp').ripples({
-  // Image Url
-  imageUrl: null,
-  // The width and height of the WebGL texture to render to.
-  // The larger this value, the smoother the rendering and the slower the ripples will propagate.
-  resolution: 256,
-  // The size (in pixels) of the drop that results by clicking or moving the mouse over the canvas.
-  dropRadius: 10,
-  // Basically the amount of refraction caused by a ripple.
-  // 0 means there is no refraction.
-  perturbance: 0.01,
-  // Whether mouse clicks and mouse movement triggers the effect.
-  interactive: true,
-  // The crossOrigin attribute to use for the affected image.
-  crossOrigin: ''
-});
-</script>
-
-<script>
-$(document).ready(function() {
-//Preloader
-$(window).on("load", function() {
-preloaderFadeOutTime = 5000;
-function hidePreloader() {
-var preloader = $('.loader');
-preloader.fadeOut(preloaderFadeOutTime);
-}
-hidePreloader();
-});
-});
-</script>
-
-<div class="loader">
-  <div class="loader-inner">
-    <div class="loader-line-wrap">
-      <div class="loader-line"></div>
-    </div>
-    <div class="loader-line-wrap">
-      <div class="loader-line"></div>
-    </div>
-    <div class="loader-line-wrap">
-      <div class="loader-line"></div>
-    </div>
-    <div class="loader-line-wrap">
-      <div class="loader-line"></div>
-    </div>
-    <div class="loader-line-wrap">
-      <div class="loader-line"></div>
-    </div>
-  </div>
-</div>
-
-</body>
+    </body>
 
 </html>
