@@ -11,6 +11,7 @@
   firebase.initializeApp(config);
 
   //Get DOM Elements
+  /*
   const txtEmail = document.querySelector("#form-username");
   const txtPassword = document.querySelector("#form-password");
   const btnSignin = document.querySelector("#sign-in");
@@ -31,7 +32,7 @@
         // ...
 });
     });
-  }
+  }*/
 
   //Add Signup event listener
 
@@ -62,14 +63,14 @@ var uiConfig = {
   },
   // Will use popup for IDP Providers sign-in flow instead of the default, redirect.
   signInFlow: 'popup',
-  signInSuccessUrl: 'http://maurice5.webcup.symars.re/',
+  signInSuccessUrl: 'minezone.html',
   signInOptions: [
     // Leave the lines as is for the providers you want to offer your users.
     firebase.auth.FacebookAuthProvider.PROVIDER_ID,
     firebase.auth.GoogleAuthProvider.PROVIDER_ID,
   ],
   // Terms of service url.
-  tosUrl: 'http://maurice5.webcup.symars.re/'
+  tosUrl: '/minezone.html'
 };
 
 // The start method will wait until the DOM is loaded.
