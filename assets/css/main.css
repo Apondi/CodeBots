@@ -3,15 +3,11 @@ body {
     padding-top: 50px;
 }
 
-<<<<<<< HEAD
-
 .jumbotron {
 	height: 450px;
 	align-items: center;
 }
 
-=======
->>>>>>> master
 #page-content-body {
 	padding: 0px 100px;
 }
@@ -76,7 +72,7 @@ flex-wrap: wrap;
 	height: 400px;
 	align-items: center;
     background-color: #4a0003;
-    background-image: url("../../images/header.jpeg");
+    background-image: url("../img/header.jpeg");
     background-position: 0% 35%;
     background-size: cover;
     background-repeat: no-repeat;
@@ -88,14 +84,14 @@ flex-wrap: wrap;
     float: right;
   }
   ul {
-    
+
     li {
       display: inline;
       padding-left: 20px;
       a {
         color: #777777;
         text-decoration: none;
-        
+
         &:hover {
           color: black;
         }
