@@ -13,7 +13,7 @@ jQuery(document).ready(function() {
     	$(this).removeClass('input-error');
     });
 
-    $('.login-form').on('submit', function(e) {
+    $('#login-form').on('submit', function(e) {
 
     	$(this).find('input[type="text"], input[type="password"], textarea').each(function(){
     		if( $(this).val() == "" ) {

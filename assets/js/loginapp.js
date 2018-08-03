@@ -11,6 +11,7 @@
   firebase.initializeApp(config);
 
   //Get DOM Elements
+  /*
   const txtEmail = document.querySelector("#form-username");
   const txtPassword = document.querySelector("#form-password");
   const btnSignin = document.querySelector("#sign-in");
@@ -23,20 +24,30 @@
       const password = txtPassword.value;
       const auth = firebase.auth();
 
-      const promise = auth.signInWithEmailAndPassword(email, password);
-      promise.catch(e => console.log(e.message));
+      firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
+        // Handle Errors here.
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        console.log(error.message);
+        // ...
+});
     });
-  }
+  }*/
 
   //Add Signup event listener
 
-  // firebase ui
+  // using firebase ui
   var ui = new firebaseui.auth.AuthUI(firebase.auth());
 
   ui.start('#firebaseui-auth-container', {
   signInOptions: [
+<<<<<<< HEAD
     firebase.auth.GoogleAuthProvider.PROVIDER_ID,
     firebase.auth.FacebookAuthProvider.PROVIDER_ID
+=======
+    firebase.auth.FacebookAuthProvider.PROVIDER_ID,
+    firebase.auth.GoogleAuthProvider.PROVIDER_ID
+>>>>>>> 2639397b676b018cf082c0f061a0f29cf61b55d1
   ],
 });
 
@@ -57,14 +68,24 @@ var uiConfig = {
   },
   // Will use popup for IDP Providers sign-in flow instead of the default, redirect.
   signInFlow: 'popup',
+<<<<<<< HEAD
   signInSuccessUrl: 'http://maurice5.webcup.symars.re/',
+=======
+  signInSuccessUrl: 'minezone.html',
+>>>>>>> 2639397b676b018cf082c0f061a0f29cf61b55d1
   signInOptions: [
     // Leave the lines as is for the providers you want to offer your users.
+    firebase.auth.FacebookAuthProvider.PROVIDER_ID,
     firebase.auth.GoogleAuthProvider.PROVIDER_ID,
     firebase.auth.FacebookAuthProvider.PROVIDER_ID
   ],
+<<<<<<< HEAD
   // Terms of service url.firebase.auth.FacebookAuthProvider.PROVIDER_ID
   tosUrl: 'http://maurice5.webcup.symars.re/'
+=======
+  // Terms of service url.
+  tosUrl: '/minezone.html'
+>>>>>>> 2639397b676b018cf082c0f061a0f29cf61b55d1
 };
 
 // The start method will wait until the DOM is loaded.
